@@ -1,7 +1,7 @@
 import sbt._
 import BuildConfig.Dependencies
 
-lazy val commonSettings = BuildConfig.commonSettings(currentVersion = "1.0")
+lazy val commonSettings = BuildConfig.commonSettings()
 
 commonSettings
 
