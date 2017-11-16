@@ -26,6 +26,8 @@ object BuildConfig {
 
       credentials += Credentials(Path.userHome / ".sbt" / "credentials"),
 
+      resolvers += Resolver.sonatypeRepo("releases"),
+
       scalaVersion := "2.12.4",
 
       crossScalaVersions := Seq("2.11.8", scalaVersion.value),
