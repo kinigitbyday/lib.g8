@@ -8,7 +8,8 @@ cache:
   directories:
    - \$HOME/.bundle.dep.cache
 after_success:
-  - ./.deployment/deploy.sh
+  - cp scripts/credentials.fake /home/travis/.sbt/credentials
+  - "./.deployment/deploy.sh"
 env:
   global:
     - USE_TAG_VERSION=true
