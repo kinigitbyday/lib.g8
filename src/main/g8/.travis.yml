@@ -9,3 +9,6 @@ cache:
    - \$HOME/.bundle.dep.cache
 after_success:
   - ./.deployment/deploy.sh
+env:
+  global:
+    - USE_TAG_VERSION=true
