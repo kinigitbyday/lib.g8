@@ -22,9 +22,7 @@ object BuildConfig {
     Seq(
       organization := "$organization$",
 
-      version := BuildConfig.Revision.version,
-
-      credentials += Credentials(Path.userHome / ".sbt" / "credentials"),
+      version := BuildConfig.Revision.version,      
 
       resolvers += Resolver.sonatypeRepo("releases"),
 
