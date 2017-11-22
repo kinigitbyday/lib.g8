@@ -49,16 +49,8 @@ object BuildConfig {
         case _ => Seq("-Xlint")
       }),
 
-      scalacOptions in doc := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
-
-      publishMavenStyle := true,
-
-      publishTo := Some(
-        if (isSnapshot.value)
-          Opts.resolver.sonatypeSnapshots
-        else
-          Opts.resolver.sonatypeStaging
-      ),
+      scalacOptions in (Compile, doc) := scalacOptions.value.filterNot(_ == "-Xfatal-warnings"),
+      scalacOptions in (Compile, doc) += "-no-java-comments"
     ) ++ Publishing.publishSettings
   }
 }
