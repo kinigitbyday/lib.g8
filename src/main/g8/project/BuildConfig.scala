@@ -22,7 +22,7 @@ object BuildConfig {
     Seq(
       organization := "$organization$",
 
-      version := BuildConfig.Revision.version,      
+      version := BuildConfig.Revision.version,
 
       resolvers += Resolver.sonatypeRepo("releases"),
 
@@ -59,6 +59,6 @@ object BuildConfig {
         else
           Opts.resolver.sonatypeStaging
       ),
-    )
+    ) ++ Publishing.publishSettings
   }
 }
