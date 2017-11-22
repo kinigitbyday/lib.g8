@@ -5,11 +5,6 @@ import xerial.sbt.Sonatype.SonatypeKeys._
 
 object Publishing {
   val publishSettings = Seq(
-    credentials += Credentials("Sonatype Nexus Repository Manager",
-      "oss.sonatype.org",
-      sys.env.getOrElse("SONATYPE_USER", default = "paradoxicalio"),
-      sys.env.getOrElse("SONATYPE_PASSWORD", default = "")),
-
     publishMavenStyle := true,
 
     publishTo := Some(
@@ -20,12 +15,6 @@ object Publishing {
     ),
 
     publishArtifact in Test := false,
-
-    sonatypeProfileName := "io.paradoxical",
-
-    pgpPublicRing := new File(".deployment/gpg/paradoxical-io.pubgpg"),
-    pgpSecretRing := new File(".deployment/gpg/paradoxical-io-private.gpg"),
-    pgpPassphrase := Some(sys.env.getOrElse("GPG_PASSWORD", default = "").toArray),
 
     pomIncludeRepository := { _ => false },
 
